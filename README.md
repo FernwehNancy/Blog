@@ -16,9 +16,20 @@
 
 
 
+## 2020年待办事项：
+
+* [ ] 看完一本小红书
+* [ ] 看完JavaScript设计模式
+* [ ] 阅读vue源代码
+
+* [ ] 
+
+
+
 ## 2020
 
 ### February
+
 * February 20，2020  [JavaScript深入之原型与原型链](https://github.com/Fernwehnancy/blog/issues/1)
 
 
