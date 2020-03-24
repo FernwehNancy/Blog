@@ -22,8 +22,6 @@
 * [ ] 看完JavaScript设计模式
 * [ ] 阅读vue源代码
 
-
-
 ## 2020
 
 ### February
