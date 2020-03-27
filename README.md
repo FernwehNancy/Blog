@@ -24,9 +24,9 @@
 
 ## 2020
 
-### February
+### March
 
-* February 20，2020  [JavaScript深入之原型与原型链](https://github.com/Fernwehnancy/blog/issues/1)
+* March 27，2020  [JavaScript深入之原型与原型链](https://github.com/Fernwehnancy/blog/issues/5)
 
 
 
