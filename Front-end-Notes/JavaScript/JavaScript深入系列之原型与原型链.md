@@ -2,11 +2,19 @@
 
 
 
+## 信息卡片
+
+>记录时间：2020-03-27
+>
+>Tag：JavaScript
+>
+>更新时间：2020-03-07
+
 ## 前言
 
 每次遇到新的概念，我们可能会想到三个问题，它是什么呢（what）？为什么会出现呢（why）？又能解决什么呢（how）？这次我们来看看原型与原型链这个概念，要解决这个3W（what, why, how），首先得从js的面向对象说起...
 
-
+> 此文需要准备好电脑，大脑，一杯咖啡
 
 ## 面向对象
 
@@ -140,4 +148,75 @@ dollP1.sayColor === dollP2.sayColor; //true
 一样的耶
 
 ## 原型链
+
+什么是原型链呢？我们可以把这个概念拆分成“原型”+“链”，原型，就是之前讲到过的原型，而链呢，就是在原型模式上产生指向的链条，之前我们讲了三个构造函数，原型对象，实例对象，对吧？假如再创建另一个构造函数，然后让这个新的构造函数的原型对象等于原来构造函数的实例化对象？怎么理解的？比如说创建一个娃娃（目前只能制造人偶娃娃，Doll默认为人偶娃娃），现在有一个新的需求，要制造动物娃娃，动物娃娃和人偶娃娃差不多，可以直接借助Doll构造函数来实例化，说白就是继承Doll的属性和方法，不需要自己再创建同样的属性，代码如下：
+
+```javascript
+function Doll(color,height,weight){ //默认人偶娃娃
+    this.color = color;
+    this.height = height;
+    this.weight = weight;
+};
+Doll.prototype.sayColor=function(){
+    console.log(this.color);
+}
+
+//制造动物娃娃的构造函数
+function AnimateDoll(name){
+    this.name = name;
+}
+//借助Doll构造函数来实例化AnimateDoll的原型对象
+AnimateDoll.prototype = new Doll();
+AnimateDoll.prototype.sayName=function(){
+    return this.name;
+}
+
+let animate1=new AnimateDoll('pig');
+animate1.name; //pig
+animate1.sayName(); //pig
+animate1.color; //undefined, 因为没传值，这个稍后再说呢～
+animate1.sayColor(); //同上
+```
+
+假如要制造新的抱枕娃娃，这个抱枕娃娃也可以是动物，也可以是人偶，那么就借用动物娃娃的构造函数实例化抱枕娃娃的原型对象，这样就能继承动物娃娃和人偶娃娃的所有属性和方法，这三个之间的关系就成为原型链，当然不只有三个～
+
+> 之前说到animate.color结果打印出undefined，因为没有传值的，这就需要利用call继承Doll的属性，然后把参数赋值给对应的属性，代码如下：
+
+```javascript
+function Doll(color,height,weight){
+    this.color = color;
+    this.height = height;
+    this.weight = weight;
+};
+Doll.prototype.sayColor=function(){
+    console.log(this.color);
+}
+
+function AnimateDoll(name,...args){
+    Doll.call(this, ...args); //新增一行
+    this.name=name;
+}
+
+AnimateDoll.prototype = new Doll();
+AnimateDoll.prototype.sayName=function(){
+    return this.name;
+}
+
+
+let animate1=new AnimateDoll('pig','pink',20,10);
+animate1.name; //pig
+animate1.sayName(); //pig
+animate1.color; //pink
+animate1.sayColor(); //pink
+animate1.height; //20
+animate1.weight; //10
+```
+
+继承方法不只有这个原型链，还有其他的，有兴趣，可以自己去看看小红书或者google~
+
+之前提到过一个问题“为什么非要判断对象类型”，假如没有对象类型，我们就没办法判断一个对象是指向哪个，也就无法实现继承的方法。
+
+
+
+
 
