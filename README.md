@@ -26,7 +26,7 @@
 
 ### March
 
-* October 08，2020 [JavaScript深入系列之继承的方法]()
+* October 08，2020 [JavaScript深入系列之继承的方法](https://github.com/FernwehNancy/Blog/issues/6)
 
 * March 27，2020  [JavaScript深入之原型与原型链](https://github.com/Fernwehnancy/blog/issues/5)
 
