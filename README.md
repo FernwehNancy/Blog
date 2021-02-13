@@ -18,9 +18,15 @@
 
 ## 2020年待办事项：
 
-* [ ] 看完一本小红书
-* [ ] 看完JavaScript设计模式
-* [ ] 阅读vue源代码
+* [ ] 看完一本小红书        50%
+* [ ] 看完JavaScript设计模式       10%
+* [ ] 阅读vue源代码         20%
+
+## 2021
+
+### February
+
+* February 12, 2020 [翻译系列之float是否已弃用？](https://github.com/FernwehNancy/Blog/issues/7)
 
 ## 2020
 
