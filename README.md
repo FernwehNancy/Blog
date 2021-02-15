@@ -26,6 +26,8 @@
 
 ### February
 
+* February 15, 2020 [翻译系列之你能回答7个闭包的面试题么？](https://github.com/FernwehNancy/Blog/issues/8)
+
 * February 12, 2020 [翻译系列之float是否已弃用？](https://github.com/FernwehNancy/Blog/issues/7)
 
 ## 2020
